@@ -1,7 +1,41 @@
 ---
 title: "eds212-day5-comp1-2"
-format: html
+format:
+  html:
+    code-fold: true
+    code-summary: "Show me the code"
 editor: visual
+execute: 
+  echo: false 
+  warning: false 
 ---
 
-## 
+```{r}
+library(tidyverse)
+
+```
+
+# explore starwars dataset
+
+```{r}
+view(starwars, n=6)
+dim(starwars)
+
+```
+
+this is the histogram of hist()
+
+```{r}
+hist(starwars$height)
+```
+
+this is the histogram using ggplot()
+
+```{r}
+ggplot(data = starwars, aes(x=starwars$height)) + geom_histogram()
+```
+
+```{r}
+
+ggplot(data=starwars, aes(x=starwars$height, y=starwars$mass))+geom_point()
+```
